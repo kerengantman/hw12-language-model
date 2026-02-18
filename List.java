@@ -50,14 +50,14 @@ public class List {
     /** GIVE Textual representation of this list. */
     public String toString() {
         if (size == 0)
-            return "( )";
-        String ans = "(";
+            return "()";
+        StringBuilder str = new StringBuilder();
         Node current = first;
         while (current != null) {
-            ans += current.cp;
+            str.append(current.cp).append(" ");
             current = current.next;
         }
-        return ans + ")";
+        return str.toString();
     }
 
     /**
