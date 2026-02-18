@@ -37,7 +37,8 @@ public class LanguageModel {
 
     /** Builds a language model from the text in the given file (the corpus). */
     public void train(String fileName) {
-        String text = In.readFile(fileName);
+        In in = new In(fileName);
+        String text = in.readAll();
         for (int i = 0; i <= text.length() - windowLength - 1; i++) {
             String window = text.substring(i, i + windowLength);
             char c = text.charAt(i + windowLength);
