@@ -51,12 +51,16 @@ public class List {
     public String toString() {
         if (size == 0)
             return "()";
-        StringBuilder str = new StringBuilder();
+        StringBuilder str = new StringBuilder("(");
         Node current = first;
         while (current != null) {
-            str.append(current.cp).append(" ");
+            if (current != first) {
+                str.append(" ");
+            }
+            str.append("(" + current.cp + ")");
             current = current.next;
         }
+        str.append(")");
         return str.toString();
     }
 
@@ -94,7 +98,7 @@ public class List {
             }
             current = current.next;
         }
-        addFirst(chr);
+        addFirst((chr));
     }
 
     /**
